@@ -1,0 +1,55 @@
+#root{
+
+    background-color: blanchedalmond;
+}
+/* *{
+    background-color: blanchedalmond;
+} */
+
+
+.gridCard {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    cursor: pointer;
+    
+}
+
+.standOut{
+
+    /* box-shadow: 1px 1px 1px 1px; */
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    
+}
+
+
+
+.footer{
+    text-align: center;
+}
+
+.footer h3{
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+.employees{
+
+    /* box-shadow: 5px 5px 5px 5px rgb(168, 103, 4); */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border: none;
+    outline: none;
+    width: 40% ;
+}
+
+nav .navbar-nav li Link{
+
+    color: blue;
+}
+
+/* IconButton{
+    color: black;
+    background-color: white;
+} */
