@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Employees from "./Employees";
 import CustomizedTables from "./GroupedTeams";
 import Nav from "./Nav";
+import ResponsiveAppBar from "./Nav1"
 import NotFound from "./NotFound";
 
 
@@ -152,7 +153,8 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <Nav />
+                {/* <Nav /> */}
+                <ResponsiveAppBar />
                 <Header team={team} teamMemberCount={employees.filter((employee) => employee.teamName === team).length} />
                 <Routes>
                     <Route path="/" element={
