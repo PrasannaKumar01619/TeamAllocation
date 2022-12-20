@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import TeamSelection from "./TeamSelection";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -40,36 +41,45 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //   createData('Gingerbread', 356, 16.0, 49, 3.9),
 // ];
 
-export default function CustomizedTables({employees}) {
+export default function CustomizedTables({ employees ,team,handleTeamChange}) {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            
-            <StyledTableCell >ID</StyledTableCell>
-            <StyledTableCell> Employee</StyledTableCell>
-            <StyledTableCell >Designation</StyledTableCell>
-            <StyledTableCell >Gender</StyledTableCell>
-            <StyledTableCell >Team</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {employees.map((e) => (
-            <StyledTableRow key={e.id}>
-            <StyledTableCell >{e.id}</StyledTableCell>
-              <StyledTableCell component="th" scope="row">
-                {e.fullName}
-              </StyledTableCell>
-             
-              
-              <StyledTableCell >{e.designation}</StyledTableCell>
-              <StyledTableCell >{e.gender}</StyledTableCell>
-              <StyledTableCell >{e.teamName}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      <div className="row justify-content-center mt-3">
+        <div className="col-lg-6 col-md-8 col-sm-8">
+          <TeamSelection team={team} handleTeamChange={handleTeamChange}></TeamSelection>
+        </div>
+      </div>
+
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+
+              <StyledTableCell >ID</StyledTableCell>
+              <StyledTableCell> Employee</StyledTableCell>
+              <StyledTableCell >Designation</StyledTableCell>
+              <StyledTableCell >Gender</StyledTableCell>
+              <StyledTableCell >Team</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {employees.map((e) => (
+              <StyledTableRow key={e.id} className={e.teamName === team ? "highlight" : "null"}>
+                <StyledTableCell >{e.id}</StyledTableCell>
+                <StyledTableCell component="th" scope="row">
+                  {e.fullName}
+                </StyledTableCell>
+
+
+                <StyledTableCell >{e.designation}</StyledTableCell>
+                <StyledTableCell >{e.gender}</StyledTableCell>
+                <StyledTableCell >{e.teamName}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
+
   );
 }

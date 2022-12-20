@@ -161,7 +161,11 @@ function App() {
 
                     </Route>
                     <Route path="/CustomizedTables" element={
-                        <CustomizedTables  employees={employees}/>
+                        <>
+                          
+                            <CustomizedTables employees={employees} team={team}  handleTeamChange={handleTeamChange} />
+                        </>
+
                     }>
 
                     </Route>
@@ -171,7 +175,7 @@ function App() {
                 <Footer date={date.getFullYear()} />
 
             </BrowserRouter>
-            
+
         </>
 
 

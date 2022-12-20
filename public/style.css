@@ -1,6 +1,7 @@
 #root{
 
     background-color: blanchedalmond;
+    
 }
 /* *{
     background-color: blanchedalmond;
@@ -9,7 +10,7 @@
 
 .gridCard {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 20px;
     row-gap: 20px;
     cursor: pointer;
@@ -27,6 +28,7 @@
 
 .footer{
     text-align: center;
+    padding: 30px;
 }
 
 .footer h3{
@@ -53,3 +55,43 @@ nav .navbar-nav li Link{
     color: black;
     background-color: white;
 } */
+
+.highlight{
+
+    z-index: 1;
+    border: 2px solid black;
+    font-size: larger;
+    animation-name: example;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+
+@keyframes example {
+    /* from {background-color: red;}
+    to {background-color: yellow;} */
+    from {box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background-color: rgb(173, 75, 75);
+        }
+    to {box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgb(235, 89, 89);
+    }
+  }
+
+/* @media screen and (max-width:600px) {
+
+    .gridCard{
+        grid-template-columns: 1fr;
+    }
+    
+} */
+
+@media screen and (max-width:992px) {
+
+    .gridCard{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
